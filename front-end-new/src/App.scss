@@ -1,0 +1,163 @@
+$background-color: #3F403D;
+$text-color: #BDD1D9;
+$button-color: #587E70;
+
+@mixin full-width-height($width, $height) {
+  width:$width;
+  height:$height;
+}
+
+@mixin adjust($pt, $ml) {
+  padding-top:$pt;
+  margin-left: $ml;
+}
+
+@mixin adjusted-form-size {
+  width: 100%;
+  margin-left: 30px;
+}
+
+a:link {
+  color: #fccbf4  ;
+}
+
+/* visited link */
+a:visited {
+  color: #d2b09b
+  ;
+}
+
+/* mouse over link */
+a:hover {
+  color: #298acd;
+  ;
+}
+
+/* selected link */
+a:active {
+  color: #61ad98;
+  ;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li {
+  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+} 
+
+.button{
+  background-color: $button-color;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.data {
+  background-color: $button-color;
+  color: $text-color;
+  width:500px;
+  padding-top:2%;
+  margin-left: 35%;
+}
+
+.login-label {
+  color: #587E70;
+  font-size: 30px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.login-form {
+  background-color: #8BB6B2;
+  margin-top: 100px;
+  margin-left: 35%;
+  padding: 30px 100px 100px 100px;
+  width:300px;
+}
+
+.login-input{
+  background-color: $text-color;
+  color: $background-color;
+  width:300px;
+}
+
+.App {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .login-form {
+    margin: 0;
+    @include full-width-height(60%, 60%);
+
+  }
+  .login-input{
+    background-color: $text-color;
+    color: $background-color;
+    @include adjusted-form-size;
+  }
+
+  .data {
+    @include full-width-height(430px, 100%);
+    @include adjust(20%, 0)
+  }
+
+  
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login-form {
+    margin: 20%;
+    padding: 50px 90px 90px 90px;
+
+
+  }
+
+  .login-input{
+    background-color: $text-color;
+    color: $background-color;
+    @include adjusted-form-size;
+  }
+
+  .data {
+    @include full-width-height(795px, 100%);
+    @include adjust(2%, 0);
+  }
+
+  
+
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .login-form {
+    margin: 30%;
+    padding: 90px 90px 90px 75px;
+  }
+
+  .data {
+    @include full-width-height(100%, 100%);
+    @include adjust(2%, 0)
+
+  }
+}
+  
+
+
+
